@@ -13,16 +13,16 @@
     </div>
 
     <div class="mt-6 flex gap-3">
-      <a href="/jobs/{{ $job->id }}/edit" class="px-3 py-2 bg-yellow-500 text-white rounded">Edit</a>
+      <a href="{{ route('jobs.edit', $job) }}" class="px-3 py-2 bg-yellow-500 text-white rounded">Edit</a>
 
-      <!-- Delete button triggers hidden DELETE form -->
-      <form method="POST" action="/jobs/{{ $job->id }}" onsubmit="return confirm('Delete this job?');">
+      <!-- Delete form using resource route name -->
+      <form method="POST" action="{{ route('jobs.destroy', $job) }}" onsubmit="return confirm('Delete this job?');">
         @csrf
         @method('DELETE')
         <button type="submit" class="px-3 py-2 bg-red-500 text-white rounded">Delete</button>
       </form>
     </div>
 
-    <a href="/jobs" class="inline-block mt-4 text-sm text-indigo-600 hover:underline">← Back to jobs</a>
+    <a href="{{ route('jobs.index') }}" class="inline-block mt-4 text-sm text-indigo-600 hover:underline">← Back to jobs</a>
   </div>
 </x-layout>

@@ -1,7 +1,7 @@
 <x-layout>
   <x-slot name="heading">Edit Job</x-slot>
 
-  <form method="POST" action="/jobs/{{ $job->id }}" class="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow">
+  <form method="POST" action="{{ route('jobs.update', $job) }}" class="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow">
     @csrf
     @method('PATCH')
 
@@ -32,9 +32,8 @@
     </div>
 
     <div class="flex justify-end gap-2">
-      <a href="/jobs/{{ $job->id }}" class="px-4 py-2 border rounded text-gray-700">Cancel</a>
+      <a href="{{ route('jobs.show', $job) }}" class="px-4 py-2 border rounded text-gray-700">Cancel</a>
       <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded">Update</button>
     </div>
   </form>
-
 </x-layout>

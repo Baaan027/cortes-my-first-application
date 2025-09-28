@@ -1,7 +1,7 @@
 <x-layout>
   <x-slot name="heading">Create Job</x-slot>
 
-  <form method="POST" action="/jobs" class="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow">
+  <form method="POST" action="{{ route('jobs.store') }}" class="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow">
     @csrf
 
     <div class="mb-4">
@@ -32,7 +32,7 @@
     </div>
 
     <div class="flex justify-end gap-2">
-      <a href="/jobs" class="px-4 py-2 border rounded text-gray-700">Cancel</a>
+      <a href="{{ route('jobs.index') }}" class="px-4 py-2 border rounded text-gray-700">Cancel</a>
       <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded">Save</button>
     </div>
   </form>

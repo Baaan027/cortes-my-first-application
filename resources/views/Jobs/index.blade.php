@@ -4,13 +4,13 @@
   <div class="max-w-4xl mx-auto space-y-4">
     <div class="flex justify-between items-center">
       <h2 class="text-lg font-semibold">Available Jobs</h2>
-      <a href="/jobs/create" class="px-3 py-2 bg-indigo-600 text-white rounded">Create Job</a>
+      <a href="{{ route('jobs.create') }}" class="px-3 py-2 bg-indigo-600 text-white rounded">Create Job</a>
     </div>
 
     <ul class="space-y-4">
       @foreach ($jobs as $job)
         <li class="bg-white p-4 rounded-lg shadow">
-          <a href="/jobs/{{ $job->id }}" class="block">
+          <a href="{{ route('jobs.show', $job) }}" class="block">
             <div class="text-sm text-indigo-600 font-bold">{{ $job->employer->name }}</div>
             <div class="mt-1">
               <strong>{{ $job->title }}</strong>
