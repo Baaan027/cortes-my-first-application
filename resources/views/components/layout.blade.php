@@ -41,6 +41,7 @@
                 <div class="flex space-x-4">
                       <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
                       <x-nav-link href="/jobs" :active="request()->is('jobs')">Jobs</x-nav-link>
+                      <a href="/jobs/create" class="ml-4 inline-block px-3 py-2 rounded bg-amber-400 text-sm text-white">Create Job</a>
 
                 </div>
             </div>
